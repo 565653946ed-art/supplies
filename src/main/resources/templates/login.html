@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>LOGIN</title>
+</head>
+<body>
+	<h1 align="center">ログイン画面</h1>
+	
+	<form th:action="@{/login}" method="post">
+		<table align="center" cellpadding="5">
+		<tr>
+			<td align="left"><label>ID</label></td>
+			<td><input type="text" name="username" required></td>
+		</tr>
+			<td align="left">PASSWORD</td>
+			<td><input type="password" name="password" required></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+		<button type="submit">ログイン</button>	
+			</td>
+		</tr>
+		
+		</table>
+	</form>
+	
+			<form th:action="@{/register}" method="get"
+			 align="center">
+		<button type="submit">ユーザー登録</button>	
+			</form>
+		
+	
+	<p align="center" th:if="${param.error}" style="color:red">IDまたはパスワードが違います</p>
+	
+
+
+
+</body>
+</html>
